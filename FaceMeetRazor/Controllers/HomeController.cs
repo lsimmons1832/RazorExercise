@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaceMeetRazor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,20 @@ namespace FaceMeetRazor.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Create()
+        {
+            ViewBag.Message = "Add your favorite albums";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Records record)
+        {
+
+            return RedirectToAction("Create");
         }
     }
 }
